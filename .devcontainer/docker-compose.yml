@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: arm-none-eabi-dev
     network_mode: host
 
     volumes:
