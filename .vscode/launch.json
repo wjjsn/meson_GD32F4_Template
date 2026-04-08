@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "C:/Users/28584/Code/mcu/Cmake_GD32F4_Template/build/Debug/GD32F4xx_Template.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            "device": "GD32F470VET6",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "preLaunchTask": "build",
+            "serverArgs": [
+                "-speed",
+                "1000"
+            ]
+        },
+        {
+            "name": "Run",
+            "cwd": "${workspaceFolder}",
+            "executable": "C:/Users/28584/Code/mcu/Cmake_GD32F4_Template/build/Debug/GD32F4xx_Template.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "",
+            "servertype": "jlink",
+            "device": "GD32F470VET6",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "preLaunchTask": "build",
+            "serverArgs": [
+                "-speed",
+                "1000"
+            ]
+        }
+    ]
+}
