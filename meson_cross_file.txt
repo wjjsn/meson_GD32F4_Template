@@ -1,0 +1,17 @@
+[binaries]
+c = 'arm-none-eabi-gcc'
+cpp = 'arm-none-eabi-g++'
+ar = 'arm-none-eabi-ar'
+strip = 'arm-none-eabi-strip'
+size = 'arm-none-eabi-size'
+objcopy = 'arm-none-eabi-objcopy'
+
+[host_machine]
+system = 'generic'
+cpu_family = 'arm'
+cpu = 'cortex-m4'
+endian = 'little'
+
+[built-in options]
+c_args = ['-mcpu=cortex-m4', '-Wall', '-Wextra', '-Wpedantic', '-fdata-sections', '-ffunction-sections', '-DGD32F4xx']
+cpp_args = ['-mcpu=cortex-m4', '-fno-rtti', '-fno-exceptions', '-fno-threadsafe-statics', '-Wall', '-Wextra', '-Wpedantic', '-fdata-sections', '-ffunction-sections']
