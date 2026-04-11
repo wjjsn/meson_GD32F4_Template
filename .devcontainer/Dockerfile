@@ -13,9 +13,11 @@ RUN apt-get update && apt-get install -y \
     bash binutils git make ninja-build \
     flex bison meson clangd \
     gcc-arm-none-eabi libnewlib-arm-none-eabi \
-    just \
+    gdb-multiarch just \
     unzip wget rsync file cpio fish locales sudo --no-install-recommends\
     && rm -rf /var/lib/apt/lists/*
+
+RUN ln -s /usr/bin/gdb-multiarch /usr/bin/arm-none-eabi-gdb
 
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
