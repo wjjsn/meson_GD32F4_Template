@@ -34,11 +34,15 @@ spl_inc = include_directories(
     'Include',
     '../CMSIS/GD/GD32F4xx/Include',
     '../CMSIS',
+    is_system: true,
 )
 
 spl_lib = static_library('GD32F4xx_SPL', spl_files,
     include_directories: spl_inc,
     build_by_default: true,
+    c_args: [
+        '-w'
+    ],
 )
 
 spl_dep = declare_dependency(
