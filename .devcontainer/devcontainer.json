@@ -12,7 +12,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-               "llvm-vs-code-extensions.vscode-clangd"
+               "llvm-vs-code-extensions.vscode-clangd",
+               "marus25.cortex-debug"
             ],
             "settings": {
                 "clangd.path": "clangd",
@@ -21,7 +22,8 @@
                 "clangd.arguments": [
                     "--query-driver=/usr/bin/arm-none-eabi-*",
                     "--compile-commands-dir=/workspace/build"
-                ]
+                ],
+                "cortex-debug.armToolchainPath":"/usr/bin"
             }
         }
     }
