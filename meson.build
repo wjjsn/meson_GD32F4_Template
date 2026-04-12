@@ -7,7 +7,6 @@ project('GD32F4xx_Template', 'c', 'cpp',
     ]
 )
 
-add_project_arguments('-DGD32F4xx', language: 'c')
 
 subdir('lib/CMSIS')
 subdir('lib/GD32F4xx_standard_peripheral')
@@ -27,6 +26,8 @@ app_inc = include_directories(
 executable('GD32F4xx_Template.elf', source_files,
     dependencies: [spl_dep, cmsis_dep],
     include_directories: app_inc,
+    c_args: ['-DGD32F4xx'],
+    cpp_args: ['-DGD32F4xx'],
     link_args: [
         '-T', meson.source_root() / 'gd32f4xx_flash.ld',
         '-Wl,-Map=GD32F4xx_Template.map'
