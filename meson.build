@@ -32,10 +32,7 @@ executable('GD32F4xx_Template.elf', source_files,
     include_directories: app_inc,
     link_args: [
         '-T', meson.source_root() / 'gd32f4xx_flash.ld',
-        '--specs=nano.specs',
-        '-Wl,-Map=GD32F4xx_Template.map',
-        '-Wl,--gc-sections',
-        '-Wl,--print-memory-usage',
+        '-Wl,-Map=GD32F4xx_Template.map'
     ],
     install: false,
 )
