@@ -22,9 +22,6 @@ source_files = files(
 
 app_inc = include_directories(
     'app/Inc',
-    'lib/GD32F4xx_standard_peripheral/Include',
-    'lib/CMSIS',
-    'lib/CMSIS/GD/GD32F4xx/Include',
 )
 
 executable('GD32F4xx_Template.elf', source_files,
