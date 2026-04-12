@@ -11,6 +11,9 @@ project('GD32F4xx_Template', 'c', 'cpp',
 subdir('lib/CMSIS')
 subdir('lib/GD32F4xx_standard_peripheral')
 
+sub = subproject('HAL')
+hal_dep = sub.get_variable('hal_dep')
+
 source_files = files(
     'lib/CMSIS/GD/GD32F4xx/Source/GCC/startup_gd32f4xx.s',
     'app/Src/main.c',
@@ -24,7 +27,7 @@ app_inc = include_directories(
 )
 
 executable('GD32F4xx_Template.elf', source_files,
-    dependencies: [spl_dep, cmsis_dep],
+    dependencies: [spl_dep, cmsis_dep, hal_dep],
     include_directories: app_inc,
     c_args: ['-DGD32F4xx'],
     cpp_args: ['-DGD32F4xx'],
