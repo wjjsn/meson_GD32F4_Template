@@ -4,6 +4,7 @@ project('GD32F4xx_Template', 'c', 'cpp',
         'warning_level=everything',
         'werror=false',
         'layout=mirror',
+        'cpp_std=c++23'
     ]
 )
 
@@ -14,26 +15,4 @@ subdir('lib/GD32F4xx_standard_peripheral')
 sub = subproject('HAL')
 hal_dep = sub.get_variable('hal_dep')
 
-source_files = files(
-    'lib/CMSIS/GD/GD32F4xx/Source/GCC/startup_gd32f4xx.s',
-    'app/Src/main.c',
-    'app/Src/syscalls.c',
-    'app/Src/gpio.c',
-    'app/Src/led.c',
-)
-
-app_inc = include_directories(
-    'app/Inc',
-)
-
-executable('GD32F4xx_Template.elf', source_files,
-    dependencies: [spl_dep, cmsis_dep, hal_dep],
-    include_directories: app_inc,
-    c_args: ['-DGD32F4xx'],
-    cpp_args: ['-DGD32F4xx'],
-    link_args: [
-        '-T', meson.source_root() / 'gd32f4xx_flash.ld',
-        '-Wl,-Map=GD32F4xx_Template.map'
-    ],
-    install: false,
-)
+subdir('example')
