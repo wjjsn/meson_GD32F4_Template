@@ -1,3 +1,6 @@
 [wrap-git]
 url = https://github.com/wjjsn/HAL.git
 revision = HEAD
+
+[provide]
+dependency_names = HAL
