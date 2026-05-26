@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/wjjsn/GD32F4xx_SPL.git
+revision = HEAD
+
+[provide]
+dependency_names = gd32f44xx_spl
