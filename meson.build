@@ -7,12 +7,10 @@ project('GD32F4xx_Template', 'c', 'cpp',
         'cpp_std=c++23'
     ]
 )
+dependencies = [
+  dependency('HAL'),
+  dependency('gd32f4xx_spl')
+]
 
-
-subdir('lib/CMSIS')
-subdir('lib/GD32F4xx_standard_peripheral')
-
-sub = subproject('HAL')
-hal_dep = sub.get_variable('hal_dep')
 
 subdir('example')
