@@ -1,1 +1,6 @@
 subdir('led')
+subdir('spi')
+subdir('usart')
+subdir('adc')
+subdir('crc')
+subdir('rtc')
