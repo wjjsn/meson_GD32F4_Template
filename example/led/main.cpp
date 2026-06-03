@@ -17,11 +17,9 @@ int main(void)
     while (1)
     {
         LED::set();
-        for (volatile uint32_t i = 0; i < 100000; ++i)
-            ;
-        LED::clear();
-        for (volatile uint32_t i = 0; i < 100000; ++i)
-            ;
-    }
+		for (uint32_t i = 0; i < 10000000; ++i);
+		LED::clear();
+		for (uint32_t i = 0; i < 10000000; ++i);
+	}
 }
 }
