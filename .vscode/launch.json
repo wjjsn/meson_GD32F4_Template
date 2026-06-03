@@ -2,9 +2,67 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug",
+            "name": "Debug: led",
             "cwd": "${workspaceFolder}",
-            "executable": "build/GD32F4xx_Template.elf",
+            "executable": "build/example/led/led.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "Reset_Handler",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: spi",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/spi/spi.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: usart",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/usart/usart.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "Reset_Handler",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ],
+            // "showDevDebugOutput": "raw"
+        },
+        {
+            "name": "Debug: adc",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/adc/adc.elf",
             "request": "launch",
             "type": "cortex-debug",
             "runToEntryPoint": "main",
@@ -15,10 +73,162 @@
                 "samplesPerSecond": 4
             },
             "postLaunchCommands": [
-                "monitor reset halt", // 通知远程 Server 复位并挂起 CPU
-                "load", // 核心指令：将 executable 指定的文件烧录到 Flash
-                "monitor reset halt" // 再次复位，确保程序从头开始（可选）
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
             ]
         },
+        {
+            "name": "Debug: dac",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/dac/dac.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: crc",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/crc/crc.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: rtc",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/rtc/rtc.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: button",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/button/button.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: oled",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/oled/oled.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: sleep-target1 (LED blink + idle pmu_to_sleepmode)",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/sleep/target1_sleep_idle.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: sleep-target2 (LED blink + idle pmu_to_deepsleepmode, WKUP)",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/sleep/target2_deepsleep_idle.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        },
+        {
+            "name": "Debug: sleep-target3 (10 blinks then pmu_to_deepsleepmode, WKUP)",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/example/sleep/target3_deepsleep_wkup.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "gdbTarget": "127.0.0.1:50000",
+            "liveWatch": {
+                "enabled": false,
+                "samplesPerSecond": 4
+            },
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset halt"
+            ]
+        }
     ]
 }
