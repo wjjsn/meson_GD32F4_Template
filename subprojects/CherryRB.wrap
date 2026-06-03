@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/wjjsn/CherryRB.git
+revision = HEAD
+
+[provide]
+dependency_names = CherryRB

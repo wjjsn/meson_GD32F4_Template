@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/wjjsn/Hardware.git
+revision = HEAD
+
+[provide]
+dependency_names = Hardware

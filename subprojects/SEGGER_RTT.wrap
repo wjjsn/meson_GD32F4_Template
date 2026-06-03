@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/wjjsn/SEGGER_RTT.git
+revision = HEAD
+
+[provide]
+dependency_names = SEGGER_RTT
